@@ -29,6 +29,7 @@
             <span ng-click="editing = true" ng-hide="editing">
               {{item.name}}
               {{item.price}}
+              {{item.type}}
               <a ng-click="deleteRestaurant(item)">Delete</a>
             </span>
             <span class="form-group" ng-show="editing" ng-submit="editing = false">
@@ -43,18 +44,49 @@
           </li>
         </ul>
       </div>
-      <div class="col-md-4">
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
         <h2>New Restaurant</h2>
         <form ng-submit="addRestaurant()" class="form-inline" role="form">
           <div class="form-group">
             <input type="text" ng-model="restaurantName" class="form-control" placeholder="Enter name">
+            <button type="submit" class="btn btn-default">Submit</button>
           </div>
-          <input type="radio" ng-model="restaurantPrice" value="$"> $ <br/>
-          <input type="radio" ng-model="restaurantPrice" value="$$"> $$ <br/>
-          <input type="radio" ng-model="restaurantPrice" value="$$$"> $$$ <br/>
-          <br>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <div class= "col-sm-2">
+
+            <h4>Price Range</h4>
+            <input type="radio" ng-model="restaurantPrice" value="$"> $ <br/>
+            <input type="radio" ng-model="restaurantPrice" value="$$"> $$ <br/>
+            <input type="radio" ng-model="restaurantPrice" value="$$$"> $$$ <br/>
+
+          </form>
+        </div>
+        <div class="col-sm-2">
+          <form ng-submit="addRestaurant()" class="form-inline" role="form">
+
+            <h4>Type</h4>
+            <input type="radio" ng-model="restaurantType" value="Breakfast"> Breakfast <br/>
+            <input type="radio" ng-model="restaurantType" value="Mexican"> Mexican <br/>
+            <input type="radio" ng-model="restaurantType" value="American"> American <br/>
+          </form>
+        </div>
+        <div class="col-sm-2">
+          <form ng-submit="addRestaurant()" class="form-inline" role="form">
+
+            <h4>Location</h4>
+            <input type="radio" ng-model="restaurantLocation" value="N Portland"> N Portland <br/>
+            <input type="radio" ng-model="restaurantLocation" value="W Portland"> W Portland <br/>
+            <input type="radio" ng-model="restaurantLocation" value="S Portland"> S Portland <br/>
+            <input type="radio" ng-model="restaurantLocation" value="E Portland"> E Portland <br/>
+          </form>
+        </div>
       </div>
     </div>
   </div>
