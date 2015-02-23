@@ -1,8 +1,8 @@
-restaurant.controller('RestaurantCtrl', function RestaurantCtrl($scope) {
+restaurantList.controller('RestaurantCtrl', function RestaurantCtrl($scope) {
  $scope.restaurants = [];
  $scope.addRestaurant = function() {
    $scope.restaurants.push({ name: $scope.restaurantName });
    $scope.restaurantName = null;
  };
- 
-})
+  $scope.deleteRestaurant = function(restaurant)
+});
